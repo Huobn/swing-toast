@@ -1,5 +1,5 @@
-import lab.callback.swingc.toast.Toast;
-import lab.callback.swingc.toast.ToastStatus;
+import tech.callback.swingc.toast.Toast;
+import tech.callback.swingc.toast.ToastStatus;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,7 @@ public class ToastFrame extends JFrame
         JButton button = new JButton("toast");
 
         button.addActionListener((event)->{
-            Toast.showToast(this, Toast.TOP, ToastStatus.INFO,"网络异常", 2000);
+            Toast.showToast(this, Toast.CENTER, ToastStatus.INFO,"你好呀", 2000);
         });
 
 

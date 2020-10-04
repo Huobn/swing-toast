@@ -1,4 +1,4 @@
-package lab.callback.swingc.toast;
+package tech.callback.swingc.toast;
 
 import java.awt.*;
 

@@ -1,6 +1,4 @@
-package lab.callback.swingc.toast;
-
-import java.util.TimerTask;
+package tech.callback.swingc.toast;
 
 /**
  * Toast,普通方式关闭
