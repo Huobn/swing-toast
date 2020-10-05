@@ -13,7 +13,7 @@ public class ToastFrame extends JFrame
         JButton button = new JButton("toast");
 
         button.addActionListener((event)->{
-            Toast.showToast(this, Toast.CENTER, ToastStatus.INFO,"你好呀", 2000);
+            Toast.showToast(this, Toast.CENTER, ToastStatus.INFO,"background task completed completed at this time", 2000);
         });
 
 

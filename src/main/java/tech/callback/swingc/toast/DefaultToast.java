@@ -27,6 +27,7 @@ public class DefaultToast extends BaseToast
 
     private final JLabel contentArea = new JLabel();
 
+
     public DefaultToast(){ this(null, "", ToastStatus.INFO); }
 
     public DefaultToast(String text){ this(null, text, ToastStatus.INFO); }
@@ -44,6 +45,8 @@ public class DefaultToast extends BaseToast
         contentArea.setHorizontalAlignment(SwingConstants.CENTER);
         /* 添加组件 */
         add(contentArea, BorderLayout.CENTER);
+        autoAdjustSizeRefText(text);
+
         /* 设置窗体边框圆角 */
         AWTUtilities.setWindowShape(this,
                 new RoundRectangle2D.Double(0, 0, getWidth(),
@@ -85,13 +88,14 @@ public class DefaultToast extends BaseToast
         if (chars.length == 0) return;
 
         /* 计算行数 */
-        builder.append("<html><body>");
+        builder.append("<html><body><p align=\"center\">"); /* 换行BUG FIXED */
         int lineCharacterCnt = 0, lineCnt = 1;
         for (char ch : chars) {
             builder.append(ch); lineCharacterCnt++;
             if ((lineCharacterCnt %= lineWrapperThreshold) == 0 ) lineCnt++;
         }
-        builder.append("</body></html>");
+        builder.append("</p></body></html>");
+        System.out.println(builder.toString());
         setSize(getWidth(), lineCnt * defaultLineHeight); /* 调整窗口大小 */
         contentArea.setText(builder.toString());
     }
